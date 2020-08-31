@@ -130,6 +130,7 @@ class bdecayTac
   betadecay *top;
   
  public:
+  CTreeParameter pin01rf;
   CTreeParameter pin01I2N;
   CTreeParameter pin01I2S;
   CTreeParameter pin02I2N;
@@ -138,6 +139,7 @@ class bdecayTac
   CTreeParameter pin01I2Scorr;
   CTreeParameter pin02I2Ncorr;
   CTreeParameter pin02I2Scorr;
+  CTreeParameter pin01xfp;
   CTreeParameter pin01xfptimecfd;
   CTreeParameter pin01xfptimelow;
   CTreeParameter pin01xfptimehigh;
@@ -326,6 +328,7 @@ class bdecayPid
   CTreeParameter de2;
   CTreeParameter de3;
   CTreeParameter rftof;
+  CTreeParameter pin01rftof;
   CTreeParameter pin01xfptof;
   CTreeParameter pin02xfptof;
   CTreeParameter i2ntof;

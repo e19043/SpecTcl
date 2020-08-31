@@ -104,6 +104,7 @@ void bdecayvHitFlag::Initialize(betadecayvariables* treetop, STD(string) name)
   taci2ntof.Initialize(name+".taci2ntof", 0, "");
   taci2stof.Initialize(name+".taci2stof", 0, "");
   taci2pos.Initialize(name+".taci2pos", 0, "");
+  tacpin01rf.Initialize(name+".tacpin01rf", 0, "");
   tacpin01xfp.Initialize(name+".tacpin01xfp", 0, "");
   tacpin02xfp.Initialize(name+".tacpin02xfp", 0, "");
 

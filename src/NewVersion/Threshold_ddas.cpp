@@ -92,6 +92,7 @@ CBDecayThreshold::operator()(const Address_t pEvent,
   bdecayv.hit.backhiover = 0;
   bdecayv.hit.backlo = 0;
   bdecayv.hit.sssd01 = 0;
+  bdecayv.hit.tacpin01rf = 0;
   bdecayv.hit.taci2ntof = 0;
   bdecayv.hit.taci2stof = 0;
   bdecayv.hit.taci2pos = 0;
@@ -253,18 +254,18 @@ CBDecayThreshold::operator()(const Address_t pEvent,
   }
   
   /*PIN01-XFP*/
-  /*if ( rEvent[bdecay.tac.pin01xfp.getId()].isValid() ) {
+  if ( rEvent[bdecay.tac.pin01xfp.getId()].isValid() ) {
     if (bdecay.tac.pin01xfp > 0) {
       bdecayv.hit.tacpin01xfp = 1;
     }
-  }*/
+  }
   
   /*PIN02-XFP*/
-  /*if ( rEvent[bdecay.tac.pin02xfp.getId()].isValid() ) {
+  if ( rEvent[bdecay.tac.pin02xfp.getId()].isValid() ) {
     if (bdecay.tac.pin02xfp > 0) {
       bdecayv.hit.tacpin02xfp = 1;
     }
-  }*/
+  }
  
   /* SCINTILLATOR */ 
   if ( rEvent[bdecay.scint.ecal.getId()].isValid() ) {

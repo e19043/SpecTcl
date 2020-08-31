@@ -35,7 +35,7 @@
 #include "Variables-ddas.h"
 #include "Correlator_ddas.h"
 
-#define PIXEL_SIZE 1
+#define PIXEL_SIZE 2
 
 typedef unsigned long long uint_64;
 
@@ -51,6 +51,8 @@ typedef struct
   long dE1;   /* dE from PIN01 */
   long dE2;   /* dE from PIN02 */
   long dE3;   /* dE from PIN03 */
+  long dE4;   /* dE from PIN04 */
+  long dE5;   /* dE from PIN05 */
   long dEscint;   /* dE from scint */
   long isum;  /* Total implant energy (from sums) */
   long imax;  /* Total implant energy (from max) */
@@ -66,6 +68,8 @@ typedef struct
   long dE1;  /* dE from PIN01 */
   long dE2;  /* dE from PIN02 */
   long dE3;  /* dE from PIN03 */
+  long dE4;  /* dE from PIN04 */
+  long dE5;   /* dE from PIN05 */
   long dEscint;   /* dE from scint */
   long isum; /* Total implant energy (from sums) */
   long imax; /* Total implant energy (from max) */
@@ -74,7 +78,7 @@ typedef struct
 } DECAY;
 
 IMPLANT implant[41][41]; /* Implant data [x(back)][y(front)] */
-DECAY decay2[41][41]; /* Correlated decay data */
+DECAY decay[41][41]; /* Correlated decay data */
 
 
 
@@ -84,8 +88,6 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
 				     CAnalyzer&      rAnalyzer,
 				     CBufferDecoder& rDecoder)
 {
-//  cout << "BEGIN CORRELATOR" << endl;
-
   int i, j;
   int condition = 0;
   int resetcheck = 0;
@@ -95,7 +97,7 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
   int dfrontch = 100;
   int back = 100;
   int front = 100;
-  int nerohit = 0;
+
   bool implant_event = false;
   bool sssd01_reject = false;
   bool punchthrough = false;
@@ -117,21 +119,25 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
 	implant[i][j].dE1 = 0;
 	implant[i][j].dE2 = 0;
 	implant[i][j].dE3 = 0;
+	implant[i][j].dE4 = 0;
+	implant[i][j].dE5 = 0;
 	implant[i][j].dEscint = 0;
 	implant[i][j].isum = 0;
 	implant[i][j].imax = 0;
 	implant[i][j].tof = 0;
 	implant[i][j].dt = 0;
 	
-	decay2[i][j].time = 0;
-	decay2[i][j].dE1 = 0;
-	decay2[i][j].dE2 = 0;
-	decay2[i][j].dE3 = 0;
-	decay2[i][j].dEscint = 0;
-	decay2[i][j].isum = 0;
-	decay2[i][j].imax = 0;
-	decay2[i][j].tof = 0;
-	decay2[i][j].dt = 0;
+	decay[i][j].time = 0;
+	decay[i][j].dE1 = 0;
+	decay[i][j].dE2 = 0;
+	decay[i][j].dE3 = 0;
+	decay[i][j].dE4 = 0;
+	decay[i][j].dE5 = 0;
+	decay[i][j].dEscint = 0;
+	decay[i][j].isum = 0;
+	decay[i][j].imax = 0;
+	decay[i][j].tof = 0;
+	decay[i][j].dt = 0;
       }
     }
     resetcheck = 56; /* Condition flag will be set to 56 when reset done */
@@ -187,14 +193,14 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
       (bdecayv.hit.backlo != 0) && (bdecayv.hit.frontlo != 0)) {
     if (bdecayv.hit.sssd01 == 0) {
       implant_event = true;
-    /*  if (( (bdecay.pid.de2 <= 2324.0) && (bdecay.pid.de2 >= 2139.0) && (bdecay.pid.pin02xfptof <= 15092.0) && (bdecay.pid.pin02xfptof >= 14731.0))) {
+      if (( (bdecay.pid.de2 <= 2324.0) && (bdecay.pid.de2 >= 2139.0) && (bdecay.pid.pin02xfptof <= 15092.0) && (bdecay.pid.pin02xfptof >= 14731.0))) {
        cout << "Actual front imaxch = " << ifrontch << endl;
        ifrontch = rand() % 40 + 1.;
        cout << "Random front imaxch = " << ifrontch << endl;
        cout << "Actual back imaxch = " << ibackch << endl;
        ibackch = rand() % 40 + 1.;
        cout << "Random back imaxch = " << ibackch << endl;
-      }*/ 
+      } 
     
       //cout << "implant" << endl;
     } else {
@@ -202,8 +208,7 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
     }
   }
   
-  if (((bdecayv.hit.pin03 == 1) && (bdecayv.hit.sssd01 == 1)) || bdecayv.hit.scint == 1) {
-  //if (((bdecayv.hit.pin03 == 1) && (bdecayv.hit.sssd01 == 1)) ) {
+  if (((bdecayv.hit.pin05 == 1) && (bdecayv.hit.sssd01 == 1)) || bdecayv.hit.scint == 1) {
     punchthrough = true;
   }
   /*if (bdecayv.hit.sssd01 == 1) {
@@ -264,8 +269,8 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
 	if ( rEvent[bdecay.clock.cfd.getId()].isValid() ) {
 	  implant[ibackch][ifrontch].timecfd = bdecay.clock.cfd;
 	}
-	if ( rEvent[bdecay.pid.i2ntof.getId()].isValid() ) {
-	  implant[ibackch][ifrontch].tof = bdecay.pid.i2ntof;
+	if ( rEvent[bdecay.pid.pin02xfptof.getId()].isValid() ) {
+	  implant[ibackch][ifrontch].tof = bdecay.pid./*i2ntof*/pin02xfptof;
 	}
 	       
 	/* Update dE from PINs, etc. */
@@ -277,6 +282,12 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
 	}
 	if ( rEvent[bdecay.pid.de3.getId()].isValid() ) {
 	  implant[ibackch][ifrontch].dE3 = bdecay.pid.de3;
+	}
+	if ( rEvent[bdecay.pin04.energy.getId()].isValid() ) {
+	  implant[ibackch][ifrontch].dE4 = bdecay.pin04.energy;
+	}
+	if ( rEvent[bdecay.pin05.energy.getId()].isValid() ) {
+	  implant[ibackch][ifrontch].dE5 = bdecay.pin05.energy;
 	}
 	if ( rEvent[bdecay.scint.energy.getId()].isValid() ) {
 	  implant[ibackch][ifrontch].dEscint = bdecay.scint.energy;
@@ -293,6 +304,8 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
 	bdecay.corr.ide1  = (long)implant[ibackch][ifrontch].dE1;
 	bdecay.corr.ide2  = (long)implant[ibackch][ifrontch].dE2;
 	bdecay.corr.ide3  = (long)implant[ibackch][ifrontch].dE3;
+	bdecay.corr.ide4  = (long)implant[ibackch][ifrontch].dE4;
+	bdecay.corr.ide5  = (long)implant[ibackch][ifrontch].dE5;
 	bdecay.corr.idescint  = (long)implant[ibackch][ifrontch].dEscint;
 	bdecay.corr.iisum = (long)implant[ibackch][ifrontch].isum;
 	bdecay.corr.iimax = (long)implant[ibackch][ifrontch].imax;
@@ -344,34 +357,38 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
         if ((back >= 1) && (back <= 40) && (front >= 1) && (front <= 40)) {
 	
 	  condition = 16; /* Good decay flag */
-         if (nero.hit ==1){nerohit=1;}
+  
 	  /* Make sure time between back-to-back implants is long; if not, reject event */
 	  if (((implant[back][front].dt) >= bdecayv.corr.minimplant*bdecayv.clock.scale) || 
 	      (implant[back][front].dt == 0)) {
 	      
-	      decay2[back][front].time = current_time/*bdecay.clock.current*/;
-	      decay2[back][front].dt   = current_time/*bdecay.clock.current*/ - implant[back][front].time;
-	      decay2[back][front].dE1  = implant[back][front].dE1;
-	      decay2[back][front].dE2  = implant[back][front].dE2;
-	      decay2[back][front].dE3  = implant[back][front].dE3;
-	      decay2[back][front].dEscint  = implant[back][front].dEscint;
-	      decay2[back][front].isum = implant[back][front].isum;
-	      decay2[back][front].imax = implant[back][front].imax;
-	      decay2[back][front].tof  = implant[back][front].tof;
+	      decay[back][front].time = current_time/*bdecay.clock.current*/;
+	      decay[back][front].dt   = current_time/*bdecay.clock.current*/ - implant[back][front].time;
+	      decay[back][front].dE1  = implant[back][front].dE1;
+	      decay[back][front].dE2  = implant[back][front].dE2;
+	      decay[back][front].dE3  = implant[back][front].dE3;
+	      decay[back][front].dE4  = implant[back][front].dE4;
+	      decay[back][front].dE5  = implant[back][front].dE5;
+	      decay[back][front].dEscint  = implant[back][front].dEscint;
+	      decay[back][front].isum = implant[back][front].isum;
+	      decay[back][front].imax = implant[back][front].imax;
+	      decay[back][front].tof  = implant[back][front].tof;
 	      
 	      /* Output decay time in 10 ms units on 10-bit spectrum
 		 with 16-bit parameter declaration */
-	      bdecay.corr.dtimecal = (decay2[back][front].dt*bdecayv.clock.calib);
+	      bdecay.corr.dtimecal = (decay[back][front].dt*bdecayv.clock.calib);
 	      //cout << bdecay.corr.dtimecal << endl;
-              bdecay.corr.dtime    = decay2[back][front].time;
-	      bdecay.corr.dde1     = (long)decay2[back][front].dE1;
-	      bdecay.corr.dde2     = (long)decay2[back][front].dE2;
-	      bdecay.corr.dde3     = (long)decay2[back][front].dE3;
-	      bdecay.corr.ddescint     = (long)decay2[back][front].dEscint;
-	      bdecay.corr.disum    = (long)decay2[back][front].isum;
-	      bdecay.corr.dimax    = (long)decay2[back][front].imax;
-	      bdecay.corr.dtof     = decay2[back][front].tof;
-	      bdecay.corr.dneut    = nerohit; 
+              bdecay.corr.dtime    = decay[back][front].time;
+	      bdecay.corr.dde1     = (long)decay[back][front].dE1;
+	      bdecay.corr.dde2     = (long)decay[back][front].dE2;
+	      bdecay.corr.dde3     = (long)decay[back][front].dE3;
+	      bdecay.corr.dde4     = (long)decay[back][front].dE4;
+	      bdecay.corr.dde5     = (long)decay[back][front].dE5;
+	      bdecay.corr.ddescint     = (long)decay[back][front].dEscint;
+	      bdecay.corr.disum    = (long)decay[back][front].isum;
+	      bdecay.corr.dimax    = (long)decay[back][front].imax;
+	      bdecay.corr.dtof     = decay[back][front].tof;
+	    
 	  } else {
 	    condition = 52; /* Time between implants too short */
 	  }
@@ -403,7 +420,7 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
   //cout << "end " << endl;
   bdecay.corr.flag = (long) condition;
 
-//  cout << "End of Correlator" << endl;
+ //cout << "End of Correlator" << endl;
  
   /* END OF USER LOGIC */ 
 

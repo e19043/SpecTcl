@@ -99,6 +99,7 @@ void bdecayClock::Reset()
 
 void bdecayTac::Initialize(betadecay* treetop, STD(string) name)
 {
+  pin01rf.Initialize(name+".pin01rf", 16);
   pin01I2N.Initialize(name+".pin01I2N", 16);
   pin01I2S.Initialize(name+".pin01I2S",16);
   pin02I2N.Initialize(name+".pin02I2N",16);
@@ -107,9 +108,11 @@ void bdecayTac::Initialize(betadecay* treetop, STD(string) name)
   pin01I2Scorr.Initialize(name+".pin01I2Scorr",16);
   pin02I2Ncorr.Initialize(name+".pin02I2Ncorr",16);
   pin02I2Scorr.Initialize(name+".pin02I2Scorr",16);
+  pin01xfp.Initialize(name+".pin01xfp",16);
   pin01xfptimecfd.Initialize(name+".pin01xfptimecfd", 32);
   pin01xfptimelow.Initialize(name+".pin01xfptimelow", 32);
   pin01xfptimehigh.Initialize(name+".pin01xfptimehigh", 32); 
+  pin02xfp.Initialize(name+".pin02xfp",16);
   pin02xfptimecfd.Initialize(name+".pin02xfptimecfd", 32);
   pin02xfptimelow.Initialize(name+".pin02xfptimelow", 32);
   pin02xfptimehigh.Initialize(name+".pin02xfptimehigh", 32); 
@@ -131,6 +134,7 @@ void bdecayTac::Initialize(betadecay* treetop, STD(string) name)
 }
 void bdecayTac::Reset()
 {
+  pin01rf.Reset();
   pin01I2N.Reset();
   pin01I2S.Reset();
   pin02I2N.Reset();
@@ -139,9 +143,11 @@ void bdecayTac::Reset()
   pin01I2Scorr.Reset();
   pin02I2Ncorr.Reset();
   pin02I2Scorr.Reset();
+  pin01xfp.Reset();
   pin01xfptimecfd.Reset();
   pin01xfptimelow.Reset();
   pin01xfptimehigh.Reset(); 
+  pin02xfp.Reset();
   pin02xfptimecfd.Reset();
   pin02xfptimelow.Reset();
   pin02xfptimehigh.Reset(); 
@@ -361,6 +367,7 @@ void bdecayPid::Initialize(betadecay* treetop, STD(string) name)
   de2.Initialize(name+".de2", 16);
   de3.Initialize(name+".de3", 16);
   rftof.Initialize(name+".rftof", 16);
+  pin01rftof.Initialize(name+".pin01rftof", 16);
   pin01xfptof.Initialize(name+".pin01xfptof",16);
   pin02xfptof.Initialize(name+".pin02xfptof",16);
   i2ntof.Initialize(name+".i2ntof", 16);
@@ -384,6 +391,7 @@ void bdecayPid::Reset()
   de2.Reset();
   de3.Reset();
   rftof.Reset();
+  pin01rftof.Reset();
   pin01xfptof.Reset();
   pin02xfptof.Reset();
   i2ntof.Reset();

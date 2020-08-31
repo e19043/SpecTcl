@@ -146,6 +146,7 @@ class bdecayvHitFlag
   CTreeVariable taci2ntof;
   CTreeVariable taci2stof;
   CTreeVariable taci2pos;
+  CTreeVariable tacpin01rf;
   CTreeVariable tacpin01xfp;
   CTreeVariable tacpin02xfp;
 

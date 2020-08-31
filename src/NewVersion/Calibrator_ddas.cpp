@@ -346,19 +346,21 @@ CBDecayCalibrator::operator()(const Address_t pEvent,
     // 272-287 
     //I2N-I2S   
     //TAC ORDER NOT DECIDED YET, COMMENT OUT FOR NOW
+    /*
     if(id == 275) {
       bdecay.tac.i2pos = bdecay.raw.chanid[id].adc + 0.0;
     } 
+    */
 
-    /* UNUSED
     // Pin01 - RF TAC
-    if(id == 306) {
+    if(id == 277) {
       bdecay.tac.pin01rf = bdecay.raw.chanid[id].adc + 0.0;
     }
       
     // Pin01 - XFP TAC   
-    if(id == 304) {            
+    if(id == 275) {            
       bdecay.tac.pin01xfp = bdecay.raw.chanid[id].adc + 0.0;
+      bdecay.pid.pin01xfptof = bdecay.tac.pin01xfp;
 
      if ( rEvent[bdecay.raw.chanid[id].timecfd.getId()].isValid() ) {
        bdecay.tac.pin01xfptimecfd = bdecay.raw.chanid[id].timecfd + 0.0;
@@ -374,7 +376,7 @@ CBDecayCalibrator::operator()(const Address_t pEvent,
     }
 
     // Pin02 - XFP TAC
-    if(id == 308) {            
+    if(id == 276) {            
       bdecay.tac.pin02xfp = bdecay.raw.chanid[id].adc + 0.0;
      
      if ( rEvent[bdecay.raw.chanid[id].timecfd.getId()].isValid() ) {
@@ -389,7 +391,7 @@ CBDecayCalibrator::operator()(const Address_t pEvent,
        bdecay.tac.pin02xfptimehigh =bdecay.raw.chanid[id].timehigh + 0.0;
      }
     }
-    */
+    //THe following are unused but leave them in so old evt files still work
     // Pin01 - I2S TAC 
     if( id == 277 ) {
       bdecay.tac.pin01I2S = bdecay.raw.chanid[id].adc + 0.0;

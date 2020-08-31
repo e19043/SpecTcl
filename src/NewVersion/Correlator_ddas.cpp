@@ -264,9 +264,16 @@ Bool_t CBDecayCorrelator::operator()(const Address_t pEvent,
 	if ( rEvent[bdecay.clock.cfd.getId()].isValid() ) {
 	  implant[ibackch][ifrontch].timecfd = bdecay.clock.cfd;
 	}
+    // Comment out the following when using XFP TOF
+    /*
 	if ( rEvent[bdecay.pid.i2ntof.getId()].isValid() ) {
 	  implant[ibackch][ifrontch].tof = bdecay.pid.i2ntof;
 	}
+    */
+    // Use the following when using XFP TOF
+    if ( rEvent[bdecay.pid.pin01xfptof.getId()].isValid() ) {
+      implant[ibackch][ifrontch].tof = bdecay.tac.pin01xfp; 
+    }
 	       
 	/* Update dE from PINs, etc. */
 	if ( rEvent[bdecay.pid.de1.getId()].isValid() ) {
