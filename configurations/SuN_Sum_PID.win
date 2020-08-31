@@ -1,0 +1,94 @@
+Geometry 4,4
+# /user/e17028/SpecTcl_v5/SuN_Sum_PID.win Written by @(#)dispwind.cc	2.2 1/28/94  at Sun Mar 31 21:21:25 2019
+
+Window  0,0,"PID-corrected-i2n!dssd"
+   SCALE Manual 256
+   Refresh 10
+   MAPPED 1
+   Expanded 568,1491  15,220
+   Rendition Color
+Endwindow
+Window  1,0,"SuN_sum_of_segments!ele1a_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  2,0,"SuN_sum_of_segments!ele1b_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  3,0,"SuN_sum_of_segments!ele2a_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  0,1,"SuN_sum_of_segments!ele2b_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  1,1,"SuN_sum_of_segments!ele2c_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  2,1,"SuN_sum_of_segments!ele3a_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  3,1,"SuN_sum_of_segments!ele3b_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  0,2,"SuN_sum_of_segments!ele3c_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  1,2,"SuN_sum_of_segments!ele4b_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  2,2,"SuN_sum_of_segments!ele4c_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  3,2,"SuN_sum_of_segments!ele4d_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  0,3,"SuN_sum_of_segments!ele5b_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  1,3,"SuN_sum_of_segments!ele5c_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow
+Window  2,3,"SuN_sum_of_segments!ele5d_sun"
+   SCALE Manual 32
+   COUNTSAXIS  LOG
+   Refresh 10
+   MAPPED 1
+Endwindow

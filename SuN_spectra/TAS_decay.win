@@ -1,0 +1,63 @@
+Geometry 4,3
+# /user/e17028/SpecTcl_v5/SuN_spectra/TAS_decay.win Written by @(#)dispwind.cc	2.2 1/28/94  at Thu Mar 28 11:34:57 2019
+
+Window  0,0,"corr.dPID"
+   SCALE Manual 256
+   MAPPED 1
+   Rendition Color
+Endwindow
+Window  1,0,"SuN_total_cal_Z11"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow
+Window  2,0,"SuN_total_cal_Z12"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow
+Window  3,0,"SuN_total_cal_Z21"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow
+Window  0,1,"SuN_total_cal_Z22"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow
+Window  1,1,"SuN_total_cal_Z23"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow
+Window  2,1,"SuN_total_cal_Z31"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow
+Window  3,1,"SuN_total_cal_Z32"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow
+Window  0,2,"SuN_total_cal_Z33"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow
+Window  1,2,"SuN_total_cal_Z41"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow
+Window  2,2,"SuN_total_cal_Z42"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow
+Window  3,2,"SuN_total_cal_Z43"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 1,501
+Endwindow

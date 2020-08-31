@@ -1,0 +1,163 @@
+Geometry 8,5
+# /user/e17028/SpecTcl-WJ/configurations/DSSDhigain.win Written by @(#)dispwind.cc	2.2 1/28/94  at Mon Mar 18 08:30:45 2019
+
+Window  0,0,"BACK HI ECAL 01"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,0,"BACK HI ECAL 02"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,0,"BACK HI ECAL 03"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,0,"BACK HI ECAL 04"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,0,"BACK HI ECAL 05"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,0,"BACK HI ECAL 06"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,0,"BACK HI ECAL 07"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,0,"BACK HI ECAL 08"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,1,"BACK HI ECAL 09"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,1,"BACK HI ECAL 10"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,1,"BACK HI ECAL 11"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,1,"BACK HI ECAL 12"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,1,"BACK HI ECAL 13"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,1,"BACK HI ECAL 14"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,1,"BACK HI ECAL 15"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,1,"BACK HI ECAL 16"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,2,"BACK HI ECAL 17"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,2,"BACK HI ECAL 18"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,2,"BACK HI ECAL 19"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,2,"BACK HI ECAL 20"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,2,"BACK HI ECAL 21"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,2,"BACK HI ECAL 22"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,2,"BACK HI ECAL 23"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,2,"BACK HI ECAL 24"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,3,"BACK HI ECAL 25"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,3,"BACK HI ECAL 26"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,3,"BACK HI ECAL 27"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,3,"BACK HI ECAL 28"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,3,"BACK HI ECAL 29"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,3,"BACK HI ECAL 30"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,3,"BACK HI ECAL 31"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,3,"BACK HI ECAL 32"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,4,"BACK HI ECAL 33"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,4,"BACK HI ECAL 34"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,4,"BACK HI ECAL 35"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,4,"BACK HI ECAL 36"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,4,"BACK HI ECAL 37"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,4,"BACK HI ECAL 38"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,4,"BACK HI ECAL 39"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,4,"BACK HI ECAL 40"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow

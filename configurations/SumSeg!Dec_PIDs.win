@@ -1,0 +1,101 @@
+Geometry 4,4
+# /user/e17028/SpecTcl_v5/configurations/SumSeg!Dec_PIDs.win Written by @(#)dispwind.cc	2.2 1/28/94  at Fri Mar 29 00:08:01 2019
+
+Window  0,0,"SuN_sum_of_segments!ele5c_sun"
+   SCALE Manual 256
+   Refresh 10
+   MAPPED 1
+   Expanded 0,636
+Endwindow
+Window  1,0,"corr.ide1.vs.corr.itof"
+   SCALE Manual 256
+   Refresh 10
+   MAPPED 1
+   Expanded 373,683  123,532
+   Rendition Color
+Endwindow
+Window  2,0,"corr.dde1.vs.corr.dtof"
+   SCALE Manual 256
+   Refresh 10
+   MAPPED 1
+   Expanded 379,695  140,487
+   Rendition Color
+Endwindow
+Window  3,0,"PID-corrected-i2n"
+   SCALE Manual 256
+   Refresh 10
+   MAPPED 1
+   Expanded 289,776  135,637
+   Rendition Color
+Endwindow
+Window  0,1,"SuN_sum_of_segments!ele1a_dec_sun"
+   SCALE Manual 64
+   Refresh 10
+   MAPPED 1
+   Expanded 0,492
+Endwindow
+Window  1,1,"SuN_sum_of_segments!ele1b_dec_sun"
+   SCALE Manual 64
+   Refresh 10
+   MAPPED 1
+   Expanded 0,636
+Endwindow
+Window  2,1,"SuN_sum_of_segments!ele2a_dec_sun"
+   SCALE Manual 64
+   Refresh 10
+   MAPPED 1
+   Expanded 0,636
+Endwindow
+Window  3,1,"SuN_sum_of_segments!ele2b_dec_sun"
+   SCALE Manual 64
+   Refresh 10
+   MAPPED 1
+   Expanded 0,636
+Endwindow
+Window  0,2,"SuN_sum_of_segments!ele2c_dec_sun"
+   SCALE Manual 64
+   Refresh 10
+   MAPPED 1
+   Expanded 0,636
+Endwindow
+Window  1,2,"SuN_sum_of_segments!ele3a_dec_sun"
+   SCALE Manual 64
+   Refresh 10
+   MAPPED 1
+   Expanded 0,636
+Endwindow
+Window  2,2,"SuN_sum_of_segments!ele3b_dec_sun"
+   SCALE Manual 128
+   Refresh 10
+   MAPPED 1
+   Expanded 0,636
+Endwindow
+Window  3,2,"SuN_sum_of_segments!ele3c_dec_sun"
+   SCALE Manual 128
+   Refresh 10
+   MAPPED 1
+   Expanded 0,364
+Endwindow
+Window  0,3,"SuN_sum_of_segments!ele4b_dec_sun"
+   SCALE Manual 64
+   Refresh 10
+   MAPPED 1
+   Expanded 0,636
+Endwindow
+Window  1,3,"SuN_sum_of_segments!ele4c_dec_sun"
+   SCALE Manual 512
+   Refresh 10
+   MAPPED 1
+   Expanded 0,636
+Endwindow
+Window  2,3,"SuN_sum_of_segments!ele4d_dec_sun"
+   SCALE Manual 64
+   Refresh 10
+   MAPPED 1
+   Expanded 0,636
+Endwindow
+Window  3,3,"SuN_sum_of_segments!ele5d_dec_sun"
+   SCALE Manual 64
+   Refresh 10
+   MAPPED 1
+Endwindow

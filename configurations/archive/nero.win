@@ -1,0 +1,387 @@
+Geometry 8,8
+# /user/e17028/SpecTcl-WJ/configurations/nero.win Written by @(#)dispwind.cc	2.2 1/28/94  at Sat Mar 16 09:56:51 2019
+
+Window  0,0,"RAW208"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,13634
+Endwindow
+Window  1,0,"RAW209"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,13634
+Endwindow
+Window  2,0,"RAW210"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,13634
+Endwindow
+Window  3,0,"RAW211"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,13634
+Endwindow
+Window  4,0,"RAW212"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  5,0,"RAW213"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  6,0,"RAW214"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  7,0,"RAW215"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  0,1,"RAW216"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  1,1,"RAW217"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  2,1,"RAW218"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  3,1,"RAW219"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  4,1,"RAW220"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  5,1,"RAW221"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  6,1,"RAW222"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  7,1,"RAW223"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  0,2,"RAW224"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  1,2,"RAW225"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  2,2,"RAW226"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  3,2,"RAW227"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  4,2,"RAW228"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  5,2,"RAW229"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  6,2,"RAW230"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  7,2,"RAW231"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  0,3,"RAW232"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  1,3,"RAW233"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  2,3,"RAW234"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  3,3,"RAW235"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  4,3,"RAW236"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  5,3,"RAW237"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  6,3,"RAW238"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  7,3,"RAW239"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  0,4,"RAW240"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  1,4,"RAW241"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  2,4,"RAW242"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  3,4,"RAW243"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  4,4,"RAW244"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  5,4,"RAW245"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  6,4,"RAW246"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  7,4,"RAW247"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  0,5,"RAW248"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  1,5,"RAW249"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  2,5,"RAW250"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  3,5,"RAW251"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  4,5,"RAW252"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  5,5,"RAW253"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  6,5,"RAW254"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  7,5,"RAW255"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  0,6,"RAW256"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  1,6,"RAW257"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  2,6,"RAW258"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  3,6,"RAW259"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  4,6,"RAW260"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  5,6,"RAW261"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  6,6,"RAW262"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  7,6,"RAW263"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  0,7,"RAW264"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  1,7,"RAW265"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  2,7,"RAW266"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  3,7,"RAW267"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  4,7,"RAW268"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  5,7,"RAW269"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  6,7,"RAW270"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow
+Window  7,7,"RAW271"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,4238
+Endwindow

@@ -1,0 +1,63 @@
+Geometry 4,3
+# /user/e17028/SpecTcl_v5/SuN_seg_overview.win Written by @(#)dispwind.cc	2.2 1/28/94  at Wed Mar 27 23:18:38 2019
+
+Window  0,0,"T1"
+   SCALE Manual 1024
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,16130
+Endwindow
+Window  1,0,"T2"
+   SCALE Manual 1024
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,16130
+Endwindow
+Window  2,0,"T3"
+   SCALE Manual 1024
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,16130
+Endwindow
+Window  3,0,"T4"
+   SCALE Manual 1024
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,16130
+Endwindow
+Window  0,1,"B1"
+   SCALE Manual 1024
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,16130
+Endwindow
+Window  1,1,"B2"
+   SCALE Manual 1024
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,16130
+Endwindow
+Window  2,1,"B3"
+   SCALE Manual 1024
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,16130
+Endwindow
+Window  3,1,"B4"
+   SCALE Manual 1024
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 0,16130
+Endwindow
+Window  0,2,"SuN_sum_of_segments"
+   SCALE Manual 16384
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 1,1601
+Endwindow
+Window  1,2,"SuN_total_raw"
+   SCALE Manual 16384
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Expanded 1,1601
+Endwindow

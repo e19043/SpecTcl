@@ -1,0 +1,115 @@
+Geometry 4,4
+# /user/e19043/SpecTcl/NERO_QuadD.win Written by @(#)dispwind.cc	2.2 1/28/94  at Sat Aug 22 01:50:22 2020
+
+Window  0,0,"Module3channel00"
+   SCALE Manual 102
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  1,0,"Module3channel01"
+   SCALE Manual 65
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  2,0,"Module3channel02"
+   SCALE Manual 114
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  3,0,"Module3channel03"
+   SCALE Manual 78
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  0,1,"Module3channel04"
+   SCALE Manual 60
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  1,1,"Module3channel05"
+   SCALE Manual 62
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  2,1,"Module3channel06"
+   SCALE Manual 57
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  3,1,"Module3channel07"
+   SCALE Manual 58
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  0,2,"Module3channel08"
+   SCALE Manual 14
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  1,2,"Module3channel09"
+   SCALE Manual 41
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  2,2,"Module3channel10"
+   SCALE Manual 32
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  3,2,"Module3channel11"
+   SCALE Manual 29
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  0,3,"Module3channel12"
+   SCALE Manual 28
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  1,3,"Module3channel13"
+   SCALE Manual 24
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  2,3,"Module3channel14"
+   SCALE Manual 30
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow
+Window  3,3,"Module3channel15"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,3001
+Endwindow

@@ -1,0 +1,64 @@
+Geometry 4,3
+# /user/e17028/SpecTcl_v5/SuN_spectra/TAS_implant.win Written by @(#)dispwind.cc	2.2 1/28/94  at Thu Mar 28 15:50:16 2019
+
+Window  0,0,"corr.iPID"
+   SCALE Manual 8
+   MAPPED 1
+   Expanded 442,765  77,426
+   Rendition Color
+Endwindow
+Window  1,0,"SuN_total_cal_Z11i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow
+Window  2,0,"SuN_total_cal_Z12i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow
+Window  3,0,"SuN_total_cal_Z21i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow
+Window  0,1,"SuN_total_cal_Z22i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow
+Window  1,1,"SuN_total_cal_Z23i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow
+Window  2,1,"SuN_total_cal_Z31i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow
+Window  3,1,"SuN_total_cal_Z32i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow
+Window  0,2,"SuN_total_cal_Z33i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow
+Window  1,2,"SuN_total_cal_Z41i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow
+Window  2,2,"SuN_total_cal_Z42i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow
+Window  3,2,"SuN_total_cal_Z43i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,52
+Endwindow

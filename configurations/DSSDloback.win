@@ -1,0 +1,163 @@
+Geometry 8,5
+# /user/e17028/SpecTcl_v5/configurations/DSSDloback.win Written by @(#)dispwind.cc	2.2 1/28/94  at Tue Mar 26 04:14:30 2019
+
+Window  0,0,"Back Lo Ecal 01"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,0,"Back Lo Ecal 02"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,0,"Back Lo Ecal 03"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,0,"Back Lo Ecal 04"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,0,"Back Lo Ecal 05"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,0,"Back Lo Ecal 06"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,0,"Back Lo Ecal 07"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,0,"Back Lo Ecal 08"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,1,"Back Lo Ecal 09"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,1,"Back Lo Ecal 10"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,1,"Back Lo Ecal 11"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,1,"Back Lo Ecal 12"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,1,"Back Lo Ecal 13"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,1,"Back Lo Ecal 14"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,1,"Back Lo Ecal 15"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,1,"Back Lo Ecal 16"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,2,"Back Lo Ecal 17"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,2,"Back Lo Ecal 18"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,2,"Back Lo Ecal 19"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,2,"Back Lo Ecal 20"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,2,"Back Lo Ecal 21"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,2,"Back Lo Ecal 22"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,2,"Back Lo Ecal 23"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,2,"Back Lo Ecal 24"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,3,"Back Lo Ecal 25"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,3,"Back Lo Ecal 26"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,3,"Back Lo Ecal 27"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,3,"Back Lo Ecal 28"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,3,"Back Lo Ecal 29"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,3,"Back Lo Ecal 30"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,3,"Back Lo Ecal 31"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,3,"Back Lo Ecal 32"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,4,"Back Lo Ecal 33"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,4,"Back Lo Ecal 34"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,4,"Back Lo Ecal 35"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,4,"Back Lo Ecal 36"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,4,"Back Lo Ecal 37"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,4,"Back Lo Ecal 38"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,4,"Back Lo Ecal 39"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,4,"Back Lo Ecal 40"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow

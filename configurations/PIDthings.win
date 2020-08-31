@@ -1,0 +1,15 @@
+Geometry 2,2
+# /user/e17028/SpecTcl_v5/configurations/PIDthings.win Written by @(#)dispwind.cc	2.2 1/28/94  at Thu Mar 28 00:56:33 2019
+
+Window  0,0,"PID-corrected-i2n"
+   SCALE Manual 32
+   MAPPED 1
+   Expanded 536,1566  45,210
+   Rendition Color
+Endwindow
+Window  1,0,"PID-corrected-i2n!dssd"
+   SCALE Manual 16
+   MAPPED 1
+   Expanded 622,1360  36,196
+   Rendition Color
+Endwindow

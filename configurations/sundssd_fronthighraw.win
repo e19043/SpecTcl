@@ -1,0 +1,67 @@
+Geometry 4,4
+# /user/e17028/SpecTcl/configurations/sundssd_fronthighraw.win Written by @(#)dispwind.cc	2.2 1/28/94  at Wed Mar 20 10:33:03 2019
+
+Window  0,0,"RAW288"
+   SCALE Manual 64
+   MAPPED 1
+Endwindow
+Window  1,0,"RAW289"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,0,"RAW290"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,0,"RAW291"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,1,"RAW292"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,1,"RAW293"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,1,"RAW294"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,1,"RAW295"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,2,"RAW296"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,2,"RAW297"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,2,"RAW298"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,2,"RAW299"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,3,"RAW300"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,3,"RAW301"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,3,"RAW302"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,3,"RAW303"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow

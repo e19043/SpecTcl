@@ -1,0 +1,163 @@
+Geometry 8,5
+# /user/e17028/front40.win Written by @(#)dispwind.cc	2.2 1/28/94  at Fri Feb 15 10:30:02 2019
+
+Window  0,0,"BACK19.01"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,0,"BACK19.02"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,0,"BACK19.03"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,0,"BACK19.04"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,0,"BACK19.05"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,0,"BACK19.06"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,0,"BACK19.07"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,0,"BACK19.08"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,1,"BACK19.09"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,1,"BACK19.10"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,1,"BACK19.11"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,1,"BACK19.12"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,1,"BACK19.13"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,1,"BACK19.14"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,1,"BACK19.15"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,1,"BACK19.16"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,2,"BACK19.17"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,2,"BACK19.18"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,2,"BACK19.19"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,2,"BACK19.20"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,2,"BACK19.21"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,2,"BACK19.22"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,2,"BACK19.23"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,2,"BACK19.24"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,3,"BACK19.25"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,3,"BACK19.26"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,3,"BACK19.27"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,3,"BACK19.28"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,3,"BACK19.29"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,3,"BACK19.30"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,3,"BACK19.31"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,3,"BACK19.32"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,4,"BACK19.33"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,4,"BACK19.34"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,4,"BACK19.35"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,4,"BACK19.36"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,4,"BACK19.37"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,4,"BACK19.38"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,4,"BACK19.39"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,4,"BACK19.40"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow

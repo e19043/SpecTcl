@@ -1,0 +1,12 @@
+Geometry 2,2
+# /user/e17028/definitions/vetos.win Written by @(#)dispwind.cc	2.2 1/28/94  at Thu Mar 14 18:44:24 2019
+
+Window  0,0,"DT"
+   SCALE Manual 1024
+   MAPPED 1
+Endwindow
+Window  1,0,"RAW304"
+   SCALE Manual 2048
+   MAPPED 1
+   Expanded 0,448
+Endwindow

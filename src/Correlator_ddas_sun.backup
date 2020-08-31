@@ -1,0 +1,569 @@
+/*****************************************************************/
+/* Correlator.cpp for DSSD Beta Decay - Digital Data Acquisition */
+/* Based on standard BCS SpecTcl codes                           */
+/* Scott Suchyta/Sean Liddick, June 2012                      */
+/*****************************************************************/
+
+/********************************************/
+/* Correlation flags:                       */
+/*                                          */
+/*   4 - invalid DSSD implant pixel         */
+/*   8 - invalid DSSD decay pixel           */
+/*  12 - implantation event                 */
+/*  16 - decay event                        */
+/*  20 - unknown event                      */
+/*  24 - front, no back decay               */
+/*  28 - back, no front decay               */
+/*  32 - back-2-back implantations          */
+/*  36 - back-2-back decays                 */
+/*  40 - invalid implant time               */
+/*  44 - invalid decay time                 */
+/*  48 - exceeded correlation time          */
+/*  52 - long-lived implant rejection       */
+/*  56 - reset correlation array            */
+/*  58 - no implants in correlation field   */
+/*  60 - sun only                        */
+/*  62 - no implant with sun only        */
+/*  64 - implant with sun only           */
+/*  68 - SuN exceeds isomer time         */
+/*  70 - implant within isomer window       */
+/********************************************/
+
+#include <config.h>
+#include <EventProcessor.h>
+#include <TCLAnalyzer.h>
+#include <math.h>
+#include <iostream>
+
+#include "Parameters-ddas.h"
+#include "Variables-ddas.h"
+#include "Correlator_ddas.h"
+#include "Correlator_ddas_sun.h"
+
+#define CORRELATION 1
+
+typedef unsigned long long uint_64;
+
+/* Define a struct for IMPLANT events */
+
+typedef struct
+{
+  bool implanted;
+  double timehigh;
+  double timelow;
+  double timecfd;
+  double time;  /* Time of event in ms */
+  long dE1;   /* dE from PIN01 */
+  long dE2;   /* dE from PIN02 */
+  long dE3;   /* dE from PIN03 */
+  long isum;  /* Total implant energy (from sums) */
+  long bisum; /* Implant energy on the back of DSSD*/
+  long fisum; /* Implant energy on the front of DSSD */
+  long imax;  /* Total implant energy (from max) */
+  double tof;   /* Time of flight */
+  double dt;    /* Time since last implant in the same pixel*/
+} SIMPLANT;
+
+/* Define a struct for DECAY events */
+
+typedef struct 
+{
+  double time; /* Time of event in ms*/
+  long dE1;  /* dE from PIN01 */
+  long dE2;  /* dE from PIN02 */
+  long dE3;  /* dE from PIN03 */
+  long isum; /* Total implant energy (from sums) */
+  long imax; /* Total implant energy (from max) */
+  long bisum;
+  long fisum;
+  double tof;  /* Time of flight (for implant event) */
+  double dt;   /* Time since implant */
+} SDECAY;
+
+SIMPLANT implant[17][17]; /* Implant data [x(back)][y(front)] */
+SDECAY decay[17][17]; /* Correlated decay data */
+
+Bool_t CgdecayCorrelator::operator()(const Address_t pEvent,
+				     CEvent&         rEvent,
+				     CAnalyzer&      rAnalyzer,
+				     CBufferDecoder& rDecoder)
+{
+ int i, j;
+  int condition = 0;
+  int resetcheck = 0;
+  int ibackch = 100;
+  int ifrontch = 100;
+  int dbackch = 100;
+  int dfrontch = 100;
+  int decay_mult = 0;
+  bool implant_event = false;
+  bool sssd01_reject = false;
+  bool decay_event = false;
+  // bool sega_only = false;
+  bool sun_only = false;
+  bool unknown_event = false;
+
+  bool implanted = false;
+
+  /*** Correlation array reset ***/
+  /* Need to reset gammav.corr.reset != 0 at start of each run */
+
+  if (gammav.corr.reset != 0) {
+    for (i=0; i<16; i++) {
+      for (j=0; j<16; j++) {
+	implant[i][j].implanted = false;
+	implant[i][j].time = 0;
+	implant[i][j].dE1 = 0;
+	implant[i][j].dE2 = 0;
+	implant[i][j].dE3 = 0;
+	implant[i][j].isum = 0;
+	implant[i][j].imax = 0;
+	implant[i][j].tof = 0;
+	implant[i][j].dt = 0;
+	implant[i][j].bisum = 0;
+	implant[i][j].fisum = 0;
+	
+	decay[i][j].time = 0;
+	decay[i][j].dE1 = 0;
+	decay[i][j].dE2 = 0;
+	decay[i][j].dE3 = 0;
+	decay[i][j].isum = 0;
+	decay[i][j].imax = 0;
+	decay[i][j].tof = 0;
+	decay[i][j].dt = 0;
+	decay[i][j].bisum = 0;
+	decay[i][j].fisum = 0;
+
+      }
+    }
+    resetcheck = 56; /* Condition flag will be set to 56 when reset done */
+    gammav.corr.reset = 0;
+  }
+
+  // define times;
+  double current_time, implant_time, decay_time;
+
+  //set current time in units of milliseconds
+  if(rEvent[gdecay.clock.fast.getId()].isValid() && rEvent[gdecay.clock.slow.getId()].isValid() ){
+     current_time = (gdecay.clock.fast*10. + 4294967296.*gdecay.clock.slow*10.) / 1000000.; //For 100s and time in ms
+  //  current_time = (gdecay.clock.fast*4. + 4294967296.*gdecay.clock.slow*4.) / 1000000.;
+  }
+  else {
+    cout << "times not valid ????? " << endl;
+  }
+
+
+  /*** Implant/Decay Logic ***/
+
+  /*
+    Pixel location is defined by the front and back strips
+    showing the maximum energy deposited (in implant or decay)
+    in each side of the DSSD.  The strip array runs from 0 to 15.  
+    If there is no event data, imaxch and dmaxch are set to 100;
+    there are channel checks to reject events with invalid positions.
+  */
+
+  /* First establish pixel locations for implants/decays */
+  
+  /* Implants first... */
+  if ( rEvent[gdecay.front.imaxch.getId()].isValid() ) {
+    ifrontch = (int)gdecay.front.imaxch;
+  }
+  if ( rEvent[gdecay.back.imaxch.getId()].isValid() ) {
+    ibackch = (int)gdecay.back.imaxch;
+  }
+  
+  /* Now decays... */
+  if ( rEvent[gdecay.front.dmaxch.getId()].isValid() ) {
+    dfrontch = (int)gdecay.front.dmaxch;
+  }
+  if ( rEvent[gdecay.back.dmaxch.getId()].isValid() ) {
+    dbackch = (int)gdecay.back.dmaxch;
+  }
+  
+  // Now establish boolean results of simple requirements to determine
+  // implants vs. decays vs. oddball events
+
+  
+// IMPLANT EVENT Definition
+
+  //Low-gain events in PIN1, PIN2, DSSD - implant 
+
+
+
+ // The condition for XFP and PIN1 TAC to be present */
+   if ((bdecayv.hit.taci2ntof == 1) && (bdecayv.hit.pin01 == 1)/* && (bdecayv.hit.pin02 == 1) &&                    // Selecting only those events which have not saturated in PIN
+				   (bdecayv.hit.backlo != 0) && (bdecayv.hit.frontlo != 0)*/)
+             			   
+    //&& (gammav.hit.backlo != 0) && (gammav.hit.frontlo != 0)) 
+   {   
+     
+ 
+    implant_event = true;
+    //cout << "implant event " << endl;
+  } 
+
+  /* High-gain event in DSSD, NO SIGNAL in PIN1, PIN2 - decay */
+  if ((bdecayv.hit.pin01 == 0) && (bdecayv.hit.pin02 == 0) &&    
+      (gammav.hit.fronthi != 0) && (gammav.hit.backhi != 0)&&         // Selecting only those events which are not saturated amd are avove the threshold
+      /*(gammav.hit.fronthiover ==0) &&(gammav.hit.backhiover ==0) &&*/     //Removing events which have saturated in high gain DSSD
+      (gammav.hit.frontlo == 0) && (gammav.hit.backlo == 0)) {
+
+    decay_event = true;
+  }
+
+ 
+  //SuN only events
+  if ((bdecayv.hit.pin01 == 0) && (bdecayv.hit.pin02 == 0) &&
+      (gammav.hit.fronthi == 0) && (gammav.hit.backhi == 0) &&
+      (gammav.hit.frontlo == 0) && (gammav.hit.backlo == 0)) { 
+ 
+    // sega_only = true;
+   
+    sun_only = true;
+  }
+
+  
+  if (implant_event) {
+
+    //cout << "Corr in: " << gdecay.pin01.ecal << " " << bdecay.pid.de1 << " " << bdecay.pid.i2ntof << endl;
+
+    /* Check for valid implantation pixel in DSSD */
+    if ((ibackch >= 0) && (ibackch <= 15) && (ifrontch >= 0) &&
+	(ifrontch <= 15)) {
+      
+      condition = 12; /* Good implantation */
+     
+      /* Check for existing implant in DSSD pixel */
+      if (implant[ibackch][ifrontch].implanted) {
+	condition = 32; /* Back-2-back implantation in DSSD */
+	
+	if ( rEvent[gdecay.clock.current.getId()].isValid() ) {
+	  if (implant[ibackch][ifrontch].time > current_time/*gdecay.clock.current*/) {
+	    condition = 40; /* Bad implant time flag */
+	  }
+	  implant[ibackch][ifrontch].dt = 
+	    (current_time/*gdecay.clock.current*/ - implant[ibackch][ifrontch].time);
+	}
+	/* Output time between implants in 1 ms units with 16-bit parameter declaration */
+	gdecay.corr.dtimplant = (unsigned long)((implant[ibackch][ifrontch].dt*
+						 gammav.clock.calib));
+      } else {
+	implant[ibackch][ifrontch].implanted = true;
+      }
+      
+      /* Update time and tof */
+      if ( rEvent[gdecay.clock.current.getId()].isValid() ) {
+	implant[ibackch][ifrontch].time = current_time/*gdecay.clock.current*/;
+      }
+      if ( rEvent[gdecay.clock.fast.getId()].isValid() ) {
+	implant[ibackch][ifrontch].timelow = gdecay.clock.fast;
+      }
+      if ( rEvent[gdecay.clock.slow.getId()].isValid() ) {
+	implant[ibackch][ifrontch].timehigh = gdecay.clock.slow;
+      }
+      if ( rEvent[gdecay.clock.cfd.getId()].isValid() ) {
+	implant[ibackch][ifrontch].timecfd = gdecay.clock.cfd;
+      }
+     	if ( rEvent[bdecay.pid.pin01xfptof.getId()].isValid() ) {
+    //  if ( rEvent[bdecay.pid.i2ntof.getId()].isValid() ) {
+   //	implant[ibackch][ifrontch].tof = bdecay.pid.i2ntof/*Tof between PIN01 and I2 North (position corrected)*/;
+        implant[ibackch][ifrontch].tof = bdecay.pid.pin01xfptof;      /*Tof between PIN01 and XFP*/;
+      }
+      
+      /* Update dE from PINs, etc. */
+      if ( rEvent[bdecay.pid.de1.getId()].isValid() ) {
+	implant[ibackch][ifrontch].dE1 = bdecay.pid.de1;
+      }
+      if ( rEvent[bdecay.pid.de2.getId()].isValid() ) {
+	implant[ibackch][ifrontch].dE2 = bdecay.pid.de2;
+      }
+      if ( rEvent[bdecay.pid.de3.getId()].isValid() ) {
+	implant[ibackch][ifrontch].dE3 = bdecay.pid.de3;
+      }
+      if ( rEvent[bdecay.pid.isum.getId()].isValid() ) {
+	implant[ibackch][ifrontch].isum = bdecay.pid.isum;
+      }
+      if ( rEvent[bdecay.pid.imax.getId()].isValid() ) {
+	implant[ibackch][ifrontch].imax = bdecay.pid.imax;
+      }
+      
+      
+      if ( rEvent[gdecay.front.isum.getId()].isValid() ) {
+	implant[ibackch][ifrontch].fisum = gdecay.front.isum;
+      }
+      
+      if ( rEvent[gdecay.back.isum.getId()].isValid() ) {
+	implant[ibackch][ifrontch].bisum = gdecay.back.isum;
+      }
+      
+      gdecay.corr.itime = implant[ibackch][ifrontch].time;
+      gdecay.corr.ide1  = (long)implant[ibackch][ifrontch].dE1;
+      gdecay.corr.ide2  = (long)implant[ibackch][ifrontch].dE2;
+      gdecay.corr.ide3  = (long)implant[ibackch][ifrontch].dE3;
+      gdecay.corr.iisum = (long)implant[ibackch][ifrontch].isum;
+      gdecay.corr.iimax = (long)implant[ibackch][ifrontch].imax;
+      gdecay.corr.itof  = implant[ibackch][ifrontch].tof;
+      //cout << "Corr out: " << gdecay.corr.ide1 << " " << gdecay.corr.itof << endl;
+      
+    } else {
+      condition = 4; /* Invalid DSSD implantation pixel */
+    }
+  } 
+ 
+     else if (decay_event) {   
+     
+
+    /* Code will search over user-defined correlation first to 
+       find decay event in DSSD */
+    
+    double decay_pixel[CORRELATION][CORRELATION];
+    // int decay_pixel_pick = 0;
+    //double decay_pixel_pick = gammav.clock.max*gammav.clock.scale;
+    double decay_pixel_pick = 1000000000.0;
+    
+    for (i=0; i<CORRELATION; i++) {
+      for (j=0; j<CORRELATION; j++) {
+	//	decay_pixel[i][j] = 0;
+	//decay_pixel[i][j] = gammav.clock.max*gammav.clock.scale;
+	decay_pixel[i][j] = 10000000000.0;
+      }
+    }
+    
+    int corr_limit = (CORRELATION - 1)/2;
+    int num_corr = 0; 
+    
+    for (i=(-corr_limit); i<(corr_limit+1); i++) {
+      for (j=(-corr_limit); j<(corr_limit+1); j++) {
+	if (((dbackch+i) >= 0) && ((dbackch+i) <= 15)
+	    && ((dfrontch+j) >= 0) && ((dfrontch+j) <= 15)) { // Valid pixel? 
+
+	  if (implant[dbackch+i][dfrontch+j].implanted) { 
+	    //  decay_pixel[i+corr_limit][j+corr_limit] = 4000 - (i*i) - (j*j);
+	    decay_pixel[i+corr_limit][j+corr_limit] =current_time-implant[dbackch+i][dfrontch+j].time;
+	    implanted = true;
+	    num_corr++;
+	  }
+ 
+	}
+      }
+    }
+
+    int front = 500;
+    int back = 500;
+   
+   
+    if (implanted) {
+      for (i=(-corr_limit); i<(corr_limit+1); i++) {
+	for (j=(-corr_limit); j<(corr_limit+1); j++) {
+	  if (((dbackch+i) >= 0) && ((dbackch+i) <= 15)
+	      && ((dfrontch+j) >= 0) && ((dfrontch+j) <= 15)) { // was giving invalid pixels, so we'll try adding this condition here too
+	  // if (decay_pixel[i+corr_limit][j+corr_limit] > decay_pixel_pick) {
+	    if (decay_pixel[i+corr_limit][j+corr_limit] < decay_pixel_pick) {
+	      decay_pixel_pick = decay_pixel[i+corr_limit][j+corr_limit];
+	      back = dbackch+i;
+	      front = dfrontch+j;
+
+           
+            
+	    }
+         
+	  }
+	}
+      }
+      
+      gdecay.corr.mult = (long)num_corr;
+     
+      num_corr = 0;
+      
+      
+      /* Check for valid decay (really correlated implant) pixel in DSSD */
+      if ((back >= 0) && (back <= 15) && (front >= 0) && (front <= 15)) { 
+	
+	condition = 16; /* Good decay flag */
+	
+	if (implant[back][front].implanted) {
+	 
+	  /* Check to see if clock is incrementing */
+	  if ( rEvent[ gdecay.clock.current.getId()].isValid() ) {
+	    if (implant[back][front].time > current_time/*gdecay.clock.current*/) {
+	      condition = 44; /* Bad decay time */
+	    }
+	  }
+	//   cout<<"Time dt 1: "<<current_time/*gdecay.clock.current*/ - implant[back][front].time<<endl;
+	  /* Make sure time between back-to-back implants is long; 
+	     if not, reject event */
+	  if (((implant[back][front].dt) >= 
+	       gammav.corr.minimplant*gammav.clock.scale) || 
+	      (implant[back][front].dt == 0)) {
+             
+	    
+	    /* Do not process correlations that extend beyond a fixed time */
+	    //  cout<<current_time<<" "<<implant[back][front].time<<endl;
+	    if ((current_time/*gdecay.clock.current*/ - implant[back][front].time) <
+		(gammav.clock.max*gammav.clock.scale)) {
+                
+	      decay_mult++;
+           
+	      decay[back][front].time = current_time/*gdecay.clock.current*/;
+	      decay[back][front].dt   = current_time/*gdecay.clock.current*/ - implant[back][front].time;
+               
+	      decay[back][front].dE1  = implant[back][front].dE1;
+	      decay[back][front].dE2  = implant[back][front].dE2;
+	      decay[back][front].dE3  = implant[back][front].dE3;
+	      decay[back][front].isum = implant[back][front].isum;
+	      decay[back][front].imax = implant[back][front].imax;
+	      decay[back][front].tof  = implant[back][front].tof;	    
+	      decay[back][front].bisum = implant[back][front].bisum;
+	      decay[back][front].fisum = implant[back][front].fisum;
+	      
+	      /* Output decay time in 1 ms units on 10-bit spectrum
+		 with 16-bit parameter declaration */
+	      gdecay.corr.dtimecal = (decay[back][front].dt*gammav.clock.calib);
+	      gdecay.corr.dtime    = decay[back][front].time;
+	      gdecay.corr.dde1     = (long)decay[back][front].dE1;  
+	      gdecay.corr.dde2     = (long)decay[back][front].dE2;
+	      gdecay.corr.dde3     = (long)decay[back][front].dE3;
+	      gdecay.corr.disum    = (long)decay[back][front].isum;
+	      gdecay.corr.dimax    = (long)decay[back][front].imax;
+	      gdecay.corr.dtof     = decay[back][front].tof;
+
+	      gdecay.corr.dbisum   = (long)decay[back][front].bisum;
+	      gdecay.corr.dfisum   = (long)decay[back][front].fisum;
+              gdecay.corr.dmult    = (long)decay_mult;  
+
+	      
+	    } else {
+	      condition = 48; /* exceeded Correlation time */
+	    }
+	    // implant[back][front].implanted = false;
+	    
+	  } else {
+	    condition = 52; /* Time between implants too short */
+	  }
+	  
+	} else {
+	  condition = 36; /* Back to back decay */
+	}
+	
+      } else {
+	condition = 8; /* Invalid decay pixel */
+	
+	/*
+	cout << "invalid front = " << front << endl;
+	cout << "invalid back = " << back << endl;
+
+	if(implanted)
+	  {
+	    cout << "implanted = true" << endl;
+	  }
+	if(!implanted)
+	  {
+	    cout << "implanted = false " << endl;
+	  }
+	*/
+
+      }
+    }else{
+      condition = 58;//non-implanted in correlation field pixels
+    }
+    //} else if (sega_only) {
+  } else if (sun_only) {
+    //cout << "segas " << endl;
+    long dt = 0;
+    long dE1 = 0;
+    long dE2 = 0;
+    long dE3 = 0;
+    long isum = 0;
+    long imax = 0;
+    long tof = 0;
+
+    condition = 60;
+
+    implant_time = 0;
+    if ( rEvent[gdecay.clock.cfd.getId()].isValid() && 
+	 rEvent[gdecay.clock.fast.getId()].isValid() && 
+	 rEvent[gdecay.clock.slow.getId()].isValid() ) {
+      //current_time = (gdecay.clock.cfd/65536.) + gdecay.clock.fast + 
+      //(gdecay.clock.slow*4294967296.);
+    }
+
+    /* Here we need to correlate gamma rays with implantations 
+       for possible microsecond isomers! */
+    for (int i=0; i<16; i++) {
+      for (int j=0; j<16; j++) {
+	if (implant[i][j].implanted) {
+	  condition = 64; //implant with sun
+	  /* Check any implants to see if they're within 
+	     1us of the implant. */
+	  if ( current_time != 0 ) {
+	    implant_time = /*(implant[i][j].timecfd/65536.) + */
+	      (implant[i][j].timelow*10. + (implant[i][j].timehigh*4294967296.*10.)) / 1000000.;
+
+	    if (implant_time > current_time) {
+	      condition = 44; /* Bad isomer time */
+	    }
+	    
+	    //cout << "tdiff " << current_time - implant_time << endl;
+	    dt = implant[i][j].dt;
+
+	    if (((current_time - implant_time)*1000 )<
+		(gammav.clockisomer.max)) { // in us
+	      condition = 70;
+
+	      if ((current_time/*gdecay.clock.current*/ - implant[i][j].time) <
+		  dt) {
+		/* Gamma is within (clockisomer.max)us following implant, 
+		   and dT is shorter than the last implant we found. */
+		dt   = (current_time/*gdecay.clock.current*/ - 
+			      implant[i][j].time) * 1000; // In us
+		dE1  = implant[i][j].dE1;
+		dE2  = implant[i][j].dE2;
+		dE3  = implant[i][j].dE3;
+		isum = implant[i][j].isum;
+		imax = implant[i][j].imax;
+		tof  = implant[i][j].tof;
+	      }
+	    }else{
+	      condition = 68;//exceeds max isomer time
+	    }
+	  }
+	}else{
+	  condition = 62;//no implant for sun isomers
+	}
+      }
+    }
+
+    /* Fill "isomer-correlated" parameters */
+    gdecay.corr.gtimecal = (((current_time - implant_time))*gammav.clockisomer.calib);    
+    gdecay.corr.gde1 = (long)dE1;
+    gdecay.corr.gde2 = (long)dE2;
+    gdecay.corr.gde3 = (long)dE3;
+    gdecay.corr.gisum = (long)isum;
+    gdecay.corr.gimax = (long)imax;
+    gdecay.corr.gtof = (long)tof;
+    
+  } else {
+    //cout << "unknown " << endl;
+    unknown_event = true;
+    condition = 20; /* Unknown event */
+    if ((gammav.hit.fronthi != 0) && (gammav.hit.backhi == 0)) {
+      condition = 24; /* DSSD front, no back */
+    }
+    if ((gammav.hit.fronthi == 0) && (gammav.hit.backhi != 0)) {
+      condition = 28; /* DSSD back, no front */
+    }
+  }
+
+  if (resetcheck != 0) {
+    condition = resetcheck; /* Reset array flag */
+  }
+  //cout << "end " << endl;
+  gdecay.corr.flag = (long) condition;
+ 
+  /* END OF USER LOGIC */ 
+
+  return kfTRUE; /* kfFALSE would abort the pipeline */
+
+};
+

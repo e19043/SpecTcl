@@ -1,0 +1,163 @@
+Geometry 8,5
+# /user/e17028/SpecTcl_v5/configurations/DSSDhibraw.win Written by @(#)dispwind.cc	2.2 1/28/94  at Mon Mar 25 15:21:29 2019
+
+Window  0,0,"Back Hi Raw 001"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,0,"Back Hi Raw 002"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,0,"Back Hi Raw 003"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,0,"Back Hi Raw 004"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,0,"Back Hi Raw 005"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,0,"Back Hi Raw 006"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,0,"Back Hi Raw 007"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,0,"Back Hi Raw 008"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,1,"Back Hi Raw 009"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,1,"Back Hi Raw 010"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,1,"Back Hi Raw 011"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,1,"Back Hi Raw 012"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,1,"Back Hi Raw 013"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,1,"Back Hi Raw 014"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,1,"Back Hi Raw 015"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,1,"Back Hi Raw 016"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,2,"Back Hi Raw 017"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,2,"Back Hi Raw 018"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,2,"Back Hi Raw 019"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,2,"Back Hi Raw 020"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,2,"Back Hi Raw 021"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,2,"Back Hi Raw 022"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,2,"Back Hi Raw 023"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,2,"Back Hi Raw 024"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,3,"Back Hi Raw 025"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,3,"Back Hi Raw 026"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,3,"Back Hi Raw 027"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,3,"Back Hi Raw 028"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,3,"Back Hi Raw 029"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,3,"Back Hi Raw 030"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,3,"Back Hi Raw 031"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,3,"Back Hi Raw 032"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  0,4,"Back Hi Raw 033"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  1,4,"Back Hi Raw 034"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  2,4,"Back Hi Raw 035"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  3,4,"Back Hi Raw 036"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  4,4,"Back Hi Raw 037"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  5,4,"Back Hi Raw 038"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  6,4,"Back Hi Raw 039"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow
+Window  7,4,"Back Hi Raw 040"
+   SCALE Manual 256
+   MAPPED 1
+Endwindow

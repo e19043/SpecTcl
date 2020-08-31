@@ -1,0 +1,67 @@
+Geometry 4,4
+# /user/e17028/SpecTcl_v5/configurations/SuNDSSD_frontLowCal.win Written by @(#)dispwind.cc	2.2 1/28/94  at Wed Mar 27 23:44:45 2019
+
+Window  0,0,"front_loecal00"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  1,0,"front_loecal01"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  2,0,"front_loecal02"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  3,0,"front_loecal03"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  0,1,"front_loecal04"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  1,1,"front_loecal05"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  2,1,"front_loecal06"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  3,1,"front_loecal07"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  0,2,"front_loecal08"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  1,2,"front_loecal09"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  2,2,"front_loecal10"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  3,2,"front_loecal11"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  0,3,"front_loecal12"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  1,3,"front_loecal13"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  2,3,"front_loecal14"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow
+Window  3,3,"front_loecal15"
+   SCALE Manual 16
+   MAPPED 1
+Endwindow

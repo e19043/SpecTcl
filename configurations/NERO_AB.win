@@ -1,0 +1,153 @@
+Geometry 8,4
+# /user/e17028/SpecTcl/configurations/NERO_AB.win Written by @(#)dispwind.cc	2.2 1/28/94  at Tue Mar 19 09:25:35 2019
+
+Window  0,0,"NERO QUAD A CH01"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  1,0,"NERO QUAD A CH02"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  2,0,"NERO QUAD A CH03"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  3,0,"NERO QUAD A CH04"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  4,0,"NERO QUAD A CH05"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  5,0,"NERO QUAD A CH06"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  6,0,"NERO QUAD A CH07"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  7,0,"NERO QUAD A CH08"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  0,1,"NERO QUAD A CH09"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  1,1,"NERO QUAD A CH10"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  2,1,"NERO QUAD A CH11"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  3,1,"NERO QUAD A CH12"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  4,1,"NERO QUAD A CH13"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  5,1,"NERO QUAD A CH14"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  6,1,"NERO QUAD A CH15"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  0,2,"NERO QUAD B CH01"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  1,2,"NERO QUAD B CH02"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  2,2,"NERO QUAD B CH03"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  3,2,"NERO QUAD B CH04"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  4,2,"NERO QUAD B CH05"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  5,2,"NERO QUAD B CH06"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  6,2,"NERO QUAD B CH07"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  7,2,"NERO QUAD B CH08"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  0,3,"NERO QUAD B CH09"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  1,3,"NERO QUAD B CH10"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  2,3,"NERO QUAD B CH11"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  3,3,"NERO QUAD B CH12"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  4,3,"NERO QUAD B CH13"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  5,3,"NERO QUAD B CH14"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow
+Window  6,3,"NERO QUAD B CH15"
+   SCALE Manual 512
+   MAPPED 1
+   Expanded 0,1488
+Endwindow

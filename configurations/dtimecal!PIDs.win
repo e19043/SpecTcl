@@ -1,0 +1,69 @@
+Geometry 4,4
+# /user/e17028/SpecTcl_v5/configurations/dtimecal!PIDs.win Written by @(#)dispwind.cc	2.2 1/28/94  at Thu Mar 28 13:02:31 2019
+
+Window  0,0,"PID-corrected-i2n"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 0,915  0,719
+   Rendition Color
+Endwindow
+Window  1,0,"corr.ide1.vs.corr.itof"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 0,915  0,719
+   Rendition Color
+Endwindow
+Window  2,0,"corr.dde1.vs.corr.dtof"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 0,915  0,719
+   Rendition Color
+Endwindow
+Window  0,1,"corr.dtimecali!ele1a_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  1,1,"corr.dtimecali!ele1b_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  2,1,"corr.dtimecali!ele2a_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  3,1,"corr.dtimecali!ele2b_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  0,2,"corr.dtimecali!ele2c_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  1,2,"corr.dtimecali!ele3a_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  2,2,"corr.dtimecali!ele3b_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  3,2,"corr.dtimecali!ele3c_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  0,3,"corr.dtimecali!ele4b_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  1,3,"corr.dtimecali!ele4c_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  2,3,"corr.dtimecali!ele4d_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  3,3,"corr.dtimecali!ele5b_dec_sun"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow

@@ -1,0 +1,52 @@
+Geometry 4,3
+# /user/e17028/SpecTcl_v5/SuN_spectra/decay_time.win Written by @(#)dispwind.cc	2.2 1/28/94  at Thu Mar 28 10:26:10 2019
+
+Window  0,0,"corr.dPID"
+   SCALE Manual 256
+   MAPPED 1
+   Rendition Color
+Endwindow
+Window  1,0,"corr.dtimecal_Z11"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  2,0,"corr.dtimecal_Z12"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  3,0,"corr.dtimecal_Z21"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  0,1,"corr.dtimecal_Z22"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  1,1,"corr.dtimecal_Z23"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  2,1,"corr.dtimecal_Z31"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  3,1,"corr.dtimecal_Z32"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  0,2,"corr.dtimecal_Z33"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  1,2,"corr.dtimecal_Z41"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  2,2,"corr.dtimecal_Z42"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  3,2,"corr.dtimecal_Z43"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow

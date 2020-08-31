@@ -1,0 +1,46 @@
+Geometry 3,3
+# /user/e17028/SpecTcl_v5/configurations/Diagnostics.win Written by @(#)dispwind.cc	2.2 1/28/94  at Tue Mar 26 10:59:42 2019
+
+Window  0,0,"DSSDLo2D"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+   Rendition Color
+Endwindow
+Window  1,0,"TAC-PIN01I2N Gated"
+   SCALE Manual 32
+   MAPPED 1
+Endwindow
+Window  2,0,"TAC - PIN01I2N"
+   SCALE Manual 64
+   MAPPED 1
+Endwindow
+Window  0,1,"PIN 1 Raw Energy gated"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  1,1,"PIN 2 Raw Energy gated"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  2,1,"PIN 3 Raw Energy gated"
+   SCALE  AUTO
+   MAPPED 1
+Endwindow
+Window  0,2,"DSSDLo2Dgated"
+   SCALE Manual 256
+   MAPPED 1
+   Rendition Color
+Endwindow
+Window  1,2,"PID-pin01-i2ntof"
+   SCALE Manual 8
+   MAPPED 1
+   Expanded 0,368  0,536
+   Rendition Color
+Endwindow
+Window  2,2,"i2N.vs.i2pos!Zblob"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 212,371  60,318
+   Rendition Color
+Endwindow

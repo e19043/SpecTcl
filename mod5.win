@@ -1,0 +1,115 @@
+Geometry 4,4
+# /user/e19043/SpecTcl/mod5.win Written by @(#)dispwind.cc	2.2 1/28/94  at Sat Aug 22 15:42:49 2020
+
+Window  0,0,"Module4channel00"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  1,0,"Module4channel01"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  2,0,"Module4channel02"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  3,0,"Module4channel03"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  0,1,"Module4channel04"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  1,1,"Module4channel05"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  2,1,"Module4channel06"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  3,1,"Module4channel07"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  0,2,"Module4channel08"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  1,2,"Module4channel09"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  2,2,"Module4channel10"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  3,2,"Module4channel11"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  0,3,"Module4channel12"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  1,3,"Module4channel13"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  2,3,"Module4channel14"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow
+Window  3,3,"Module4channel15"
+   SCALE  AUTO
+   Floor 0
+   Ceiling 4000
+   MAPPED 1
+   Expanded 1,10001
+Endwindow

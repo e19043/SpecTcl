@@ -1,0 +1,65 @@
+Geometry 3,3
+# /user/e17028/SpecTcl_v5/ONLINEmonitoring.win Written by @(#)dispwind.cc	2.2 1/28/94  at Fri Mar 29 17:18:36 2019
+
+Window  0,0,"PIN 2 Raw Energy"
+   SCALE Manual 256
+   Refresh 12
+   MAPPED 1
+Endwindow
+Window  1,0,"PID_uncorr_gated_DSSD"
+   SCALE Manual 256
+   Refresh 12
+   MAPPED 1
+   Expanded 66,242  95,368
+   Rendition Color
+Endwindow
+Window  2,0,"PID_uncorr_gated_veto"
+   SCALE Manual 256
+   Refresh 12
+   MAPPED 1
+   Expanded 66,242  95,368
+   Rendition Color
+Endwindow
+Window  0,1,"PID-corrected-i2n"
+   SCALE Manual 256
+   Refresh 12
+   MAPPED 1
+   Expanded 721,1403  0,214
+   Rendition Color
+Endwindow
+Window  1,1,"PID-corrected-i2n!dssd"
+   SCALE Manual 256
+   Refresh 12
+   MAPPED 1
+   Expanded 721,1403  0,214
+   Rendition Color
+Endwindow
+Window  2,1,"corr.ide1.vs.corr.itof"
+   SCALE Manual 256
+   Refresh 12
+   MAPPED 1
+   Expanded 18,151  74,310
+   Rendition Color
+Endwindow
+Window  0,2,"PID_uncorr_gated_PIN2"
+   LABEL OBJECTS
+   SCALE Manual 256
+   Refresh 12
+   MAPPED 1
+   Expanded 65,245  72,374
+   Rendition Color
+Endwindow
+Window  1,2,"i2N.vs.i2pos_gated"
+   SCALE Manual 8192
+   Refresh 12
+   MAPPED 1
+   Expanded 21,97  80,222
+   Rendition Color
+Endwindow
+Window  2,2,"corr.dde1.vs.corr.dtof"
+   SCALE Manual 256
+   Refresh 12
+   MAPPED 1
+   Expanded 21,214  0,201
+   Rendition Color
+Endwindow

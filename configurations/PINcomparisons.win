@@ -1,0 +1,23 @@
+Geometry 2,2
+# /user/e17028/SpecTcl_v5/configurations/PINcomparisons.win Written by @(#)dispwind.cc	2.2 1/28/94  at Wed Mar 27 22:40:48 2019
+
+Window  0,0,"PID (uncorrected)"
+   SCALE Manual 256
+   MAPPED 1
+   Rendition Color
+Endwindow
+Window  1,0,"PID_uncorr_gated_PIN2"
+   SCALE Manual 256
+   MAPPED 1
+   Rendition Color
+Endwindow
+Window  0,1,"PID_uncorr_gated_DSSD"
+   SCALE Manual 256
+   MAPPED 1
+   Rendition Color
+Endwindow
+Window  1,1,"PID_uncorr_gated_veto"
+   SCALE Manual 256
+   MAPPED 1
+   Rendition Color
+Endwindow

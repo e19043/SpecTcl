@@ -1,0 +1,64 @@
+Geometry 4,3
+# /user/e17028/SpecTcl_v5/SuN_spectra/SEG_implant.win Written by @(#)dispwind.cc	2.2 1/28/94  at Fri Mar 29 10:40:34 2019
+
+Window  0,0,"corr.iPID"
+   SCALE Manual 8
+   MAPPED 1
+   Expanded 442,765  77,426
+   Rendition Color
+Endwindow
+Window  1,0,"SuN_sum_of_segments_Z11i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow
+Window  2,0,"SuN_sum_of_segments_Z12i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow
+Window  3,0,"SuN_sum_of_segments_Z21i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow
+Window  0,1,"SuN_sum_of_segments_Z22i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow
+Window  1,1,"SuN_sum_of_segments_Z23i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow
+Window  2,1,"SuN_sum_of_segments_Z31i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow
+Window  3,1,"SuN_sum_of_segments_Z32i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow
+Window  0,2,"SuN_sum_of_segments_Z33i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow
+Window  1,2,"SuN_sum_of_segments_Z41i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow
+Window  2,2,"SuN_sum_of_segments_Z42i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow
+Window  3,2,"SuN_sum_of_segments_Z43i"
+   SCALE  AUTO
+   MAPPED 1
+   Expanded 0,127
+Endwindow

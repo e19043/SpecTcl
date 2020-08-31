@@ -1,0 +1,42 @@
+Geometry 3,3
+# /user/e17028/SpecTcl_v5/configurations/PID.win Written by @(#)dispwind.cc	2.2 1/28/94  at Tue Mar 26 19:17:21 2019
+
+Window  1,0,"FrontHiG1D"
+   SCALE Manual 262144
+   COUNTSAXIS  LOG
+   MAPPED 1
+Endwindow
+Window  2,0,"dE-TOF!FBImplanted"
+   SCALE Manual 256
+   MAPPED 1
+   Rendition Color
+Endwindow
+Window  0,1,"Scint!Pin1E_Light"
+   SCALE Manual 256
+   COUNTSAXIS  LOG
+   MAPPED 1
+Endwindow
+Window  1,1,"corr.dflag"
+   SCALE Manual 131072
+   COUNTSAXIS  LOG
+   MAPPED 1
+Endwindow
+Window  2,1,"bdecay.corr.dtimecal!de5bANDDSSDbetas"
+   SCALE Manual 8
+   MAPPED 1
+Endwindow
+Window  0,2,"Correlated_implant_PID"
+   SCALE Manual 8
+   MAPPED 1
+   Rendition Color
+Endwindow
+Window  1,2,"Correlated_decay_PID"
+   SCALE Manual 64
+   MAPPED 1
+   Rendition Color
+Endwindow
+Window  2,2,"bdecay.corr.dtimecal!de5b"
+   SCALE Manual 16
+   MAPPED 1
+   Superimpose "BDECAY.CORR.DTIMECAL!DE5BANDDSSDBETAS"
+Endwindow

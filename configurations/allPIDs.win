@@ -1,0 +1,57 @@
+Geometry 3,3
+# /user/e17028/SpecTcl_v5/configurations/allPIDs.win Written by @(#)dispwind.cc	2.2 1/28/94  at Thu Mar 28 13:17:21 2019
+
+Window  0,0,"PID (uncorrected)"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 85,219  107,350
+   Rendition Color
+Endwindow
+Window  1,0,"PID-corrected-i2n"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 818,1341  39,168
+   Rendition Color
+Endwindow
+Window  2,0,"PID-corrected-i2n!dssd"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 818,1341  39,168
+   Rendition Color
+Endwindow
+Window  0,1,"PID-corrected-i2n!Veto"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 818,1341  39,168
+   Rendition Color
+Endwindow
+Window  1,1,"PID_uncorr_gated_DSSD"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 85,219  107,350
+   Rendition Color
+Endwindow
+Window  2,1,"PID_uncorr_gated_veto"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 85,219  107,350
+   Rendition Color
+Endwindow
+Window  0,2,"PID-corrected-i2n!Veto"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 818,1341  39,168
+   Rendition Color
+Endwindow
+Window  1,2,"i2N.vs.i2pos_gated"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 19,96  91,201
+   Rendition Color
+Endwindow
+Window  2,2,"PID_uncorr_gated_PIN2"
+   SCALE Manual 256
+   MAPPED 1
+   Expanded 85,219  107,350
+   Rendition Color
+Endwindow
